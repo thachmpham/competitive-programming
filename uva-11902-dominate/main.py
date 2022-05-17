@@ -1,5 +1,20 @@
 import sys
 
+'''
+Solution:
+	- dfs(0) to find reachable vertices from 0
+	
+	- disable vertex u,
+		- dfs(0)
+		- if disable u then v unreachable,
+			- so, u dominates v
+
+	Notes:
+		- Scenarios:
+			- graph has 1 component
+			- graph has 2 disconnected components
+'''
+
 def dfs(adjList, u, visited, disableVertex = -1):
 	if visited[u] == 1 or u == disableVertex:
 		return
